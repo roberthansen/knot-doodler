@@ -1,0 +1,129 @@
+
+#main {
+    padding : 2rem 0 0 0 !important;
+    margin : 0 !important;
+}
+#rope-visibility-switch {
+    transition       : background-color 1.2s ease;
+    transition       : color 0.8s ease;
+    border           : none;
+    background-color : var(--solBase03);
+    color            : var(--solYellow);
+    font-weight      : bold;
+    font-size        : 6rem;
+    padding          : 1rem 2rem;
+    margin           : 0;
+    font-family      : 'share tech mono';
+}
+#rope-visibility-switch:hover {
+    background-color : var(--solBase03);
+    color            : var(--solYellow);
+}
+#rope-visibility-switch:active {
+    transition       : background-color 1.2s ease;
+    transition       : color 0.8s ease;
+    background-color : var(--solBase1);
+    color            : var(--solBase3);
+}
+#rope-visibility-switch-container {
+    text-align  : center;
+    height      : 12rem;
+    padding     : 0;
+    margin      : 0;
+}
+.item {
+    padding       : 0 !important;
+    margin        : 0 !important;
+    max-width     : 100% !important;
+    border-radius : 0 !important;
+    box-shadow    : unset !important;
+}
+#canvas-container, #svg-root {
+    padding : 0;
+    margin  : 0;
+    display : block;
+}
+
+#svg-root.light {
+    transition       : background-color 0.6s ease;
+    background-color : var(--solBase2);
+
+}
+#svg-root.dark {
+    transition       : background-color 0.8s ease;
+    background-color : var(--solBase02);
+}
+
+.visible {
+    visibility     : visible;
+    fill-opacity   : 1;
+    stroke-opacity : 1;
+    transition     : visibility 0s linear, fill-opacity 0.8s ease 0.4s, stroke-opacity 0.6s ease 0.2s;
+}
+.hidden {
+    visibility     : hidden;
+    fill-opacity   : 0;
+    stroke-opacity : 0;
+    transition     : visibility 0s linear 0.4s, fill-opacity 0.4s ease, stroke-opacity 0.4s ease 0.2s;
+}
+.grid-cell-dot, .grid-dot {
+    transition : stroke 0.8s ease;
+    stroke     : var(--solBase01);
+}
+.wall-visible, .grid-dot, .grid-cell-dot {
+    stroke-width   : 8;
+    stroke-linecap : round;
+}
+.visible .grid-cell-group.unblocking .grid-cell-background {
+    transition : fill 0.4 ease;
+    fill : var(--solBase2);
+}
+.visible .grid-cell-group.blocking .grid-cell-background {
+    transition : fill 0.4 ease;
+    fill : var(--solBase1);
+}
+.hidden .grid-cell-group.unblocking .grid-cell-background {
+    fill : none;
+}
+.hidden .grid-cell-group.blocking .grid-cell-background {
+    fill : none;
+}
+.grid-cell-interactivity, .grid-dot-interactivity {
+    stroke       : none;
+    fill         : white;
+    fill-opacity : 0;
+}
+.grid-cell-group.blocking:hover > .grid-cell-dot, .grid-dot-group.blocking:hover > .grid-dot {
+    transition : stroke 0.6s ease;
+    stroke : var(--solGreen);
+}
+.grid-cell-group.unblocking:hover > .grid-cell-dot, .grid-dot-group.unblocking:hover > .grid-dot {
+    transition : stroke 0.6s ease;
+    stroke : var(--solOrange);
+}
+.wall-group.unblocking .wall-visible {
+    stroke : var(--solBase3);
+}
+.wall-group.blocking .wall-visible {
+    stroke : var(--solBase0);
+}
+.wall-group.unblocking:hover > .wall-visible {
+    transition : stroke 0.6s ease;
+    stroke : var(--solOrange);
+}
+.wall-group.blocking:hover > .wall-visible {
+    transition : stroke 0.6s ease;
+    stroke : var(--solGreen);
+}
+.wall-interactivity {
+    stroke       : none;
+    fill         : white;
+    fill-opacity : 0;
+}
+.grid-rope-segment {
+    fill            : var(--solBase2);
+    shape-rendering : crispEdges;
+}
+#rope-array {
+//    filter          : url(#rope-shadow);
+}
